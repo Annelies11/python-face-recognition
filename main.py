@@ -5,7 +5,7 @@ camera = cv2.VideoCapture(0)
 
 def face_detection(frame):
     optimized = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
-    face = face_ref.detectMultiScale(optimized, scaleFactor=1.1)
+    face = face_ref.detectMultiScale(optimized, scaleFactor=1.1, minSize=(300, 300), minNeighbors=3)
     return face
 
 def drawer_box(frame):
